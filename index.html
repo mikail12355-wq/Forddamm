@@ -435,7 +435,7 @@ footer .fine a{color:#fff}
       <svg viewBox="0 0 250 50"><g fill="#5a4436" stroke="#000" stroke-width="3" stroke-linejoin="round" id="starsEmpty"></g></svg>
       <div class="fill" id="starfill"><svg viewBox="0 0 250 50"><g fill="#FFC24B" stroke="#000" stroke-width="3" stroke-linejoin="round" id="starsFull"></g></svg></div>
     </div>
-    <div class="rev-sub">bei Google · über <span id="count">0</span> Bewertungen</div>
+    <div class="rev-sub">bei Google · <span id="count">0</span> Bewertungen</div>
     <div class="chips" id="chips">
       <span class="chip" data-x="-20" data-y="-28">😊 freundliches Team</span>
       <span class="chip" data-x="20" data-y="-22">🛋️ gemütlich</span>
@@ -887,10 +887,10 @@ const starPath=cx=>`M${cx} 4 L${cx+6.5} 18 L${cx+21} 19 L${cx+10} 29 L${cx+13.5}
 ['#starsEmpty','#starsFull'].forEach(id=>{$(id).innerHTML=[25,75,125,175,225].map(x=>`<path d="${starPath(x)}"/>`).join('')});
 const chips=[...document.querySelectorAll('.chip')];
 function sterne(p){
-  const t=eo(seg(p,.05,.5));const n=4.6*t;
+  const t=eo(seg(p,.05,.5));const n=4.7*t;
   $('#score').textContent=n.toFixed(1).replace('.',',');
   $('#starfill').style.width=(n/5*100)+'%';
-  $('#count').textContent=Math.round(297*t);
+  $('#count').textContent=Math.round(299*t);
   chips.forEach((c,i)=>{const s=back(seg(p,.45+i*.06,.55+i*.06));const x=+c.dataset.x,y=+c.dataset.y;
     c.style.opacity=seg(p,.45+i*.06,.5+i*.06);
     c.style.left=`calc(50% + ${x}vw)`;c.style.top=`calc(50% + ${y}vh)`;
